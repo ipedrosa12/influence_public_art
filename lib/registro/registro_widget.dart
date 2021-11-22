@@ -1,9 +1,7 @@
-import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegistroWidget extends StatefulWidget {
@@ -14,18 +12,13 @@ class RegistroWidget extends StatefulWidget {
 }
 
 class _RegistroWidgetState extends State<RegistroWidget> {
-  DateTime datePicked;
-  TextEditingController textController5;
-  TextEditingController textController6;
-  TextEditingController textController7;
   TextEditingController textController1;
   TextEditingController textController2;
   TextEditingController textController3;
   TextEditingController textController4;
-  bool passwordVisibility;
-  String radioButtonValue1;
-  String radioButtonValue2;
-  String radioButtonValue3;
+  bool passwordVisibility1;
+  TextEditingController textController5;
+  bool passwordVisibility2;
   bool _loadingButton = false;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -37,10 +30,9 @@ class _RegistroWidgetState extends State<RegistroWidget> {
     textController2 = TextEditingController();
     textController3 = TextEditingController();
     textController4 = TextEditingController();
-    passwordVisibility = false;
+    passwordVisibility1 = false;
     textController5 = TextEditingController();
-    textController6 = TextEditingController();
-    textController7 = TextEditingController();
+    passwordVisibility2 = false;
   }
 
   @override
@@ -49,7 +41,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
       key: formKey,
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFF8BBD0),
+        backgroundColor: Color(0xFFEEEEEE),
         body: SafeArea(
           child: Container(
             width: double.infinity,
@@ -206,7 +198,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 15),
                     child: TextFormField(
                       controller: textController4,
-                      obscureText: !passwordVisibility,
+                      obscureText: !passwordVisibility1,
                       decoration: InputDecoration(
                         hintText: 'Nueva contraseña',
                         hintStyle: FlutterFlowTheme.bodyText1.override(
@@ -237,10 +229,10 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                         fillColor: Colors.white,
                         suffixIcon: InkWell(
                           onTap: () => setState(
-                            () => passwordVisibility = !passwordVisibility,
+                            () => passwordVisibility1 = !passwordVisibility1,
                           ),
                           child: Icon(
-                            passwordVisibility
+                            passwordVisibility1
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
                             color: Color(0xFF757575),
@@ -254,232 +246,57 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Fecha de nacimiento',
-                        textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.bodyText1.override(
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 15),
+                    child: TextFormField(
+                      controller: textController5,
+                      obscureText: !passwordVisibility2,
+                      decoration: InputDecoration(
+                        hintText: 'Confirmar contraseña',
+                        hintStyle: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w300,
                         ),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 15, 5, 15),
-                          child: TextFormField(
-                            onFieldSubmitted: (_) async {
-                              await DatePicker.showDatePicker(
-                                context,
-                                showTitleActions: true,
-                                onConfirm: (date) {
-                                  setState(() => datePicked = date);
-                                },
-                                currentTime: getCurrentTimestamp,
-                              );
-                            },
-                            controller: textController5,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(0),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.white,
-                            ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w300,
-                            ),
-                            keyboardType: TextInputType.datetime,
-                            validator: (val) {
-                              if (val.isEmpty) {
-                                return 'Field is required';
-                              }
-
-                              return null;
-                            },
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(4.0),
+                            topRight: Radius.circular(4.0),
+                          ),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 1,
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(4.0),
+                            topRight: Radius.circular(4.0),
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                        suffixIcon: InkWell(
+                          onTap: () => setState(
+                            () => passwordVisibility2 = !passwordVisibility2,
+                          ),
+                          child: Icon(
+                            passwordVisibility2
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            color: Color(0xFF757575),
+                            size: 22,
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(5, 15, 5, 15),
-                          child: TextFormField(
-                            controller: textController6,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              filled: true,
-                              fillColor: Colors.white,
-                            ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w300,
-                            ),
-                            keyboardType: TextInputType.datetime,
-                            validator: (val) {
-                              if (val.isEmpty) {
-                                return 'Field is required';
-                              }
-
-                              return null;
-                            },
-                          ),
-                        ),
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w300,
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(5, 15, 0, 15),
-                          child: TextFormField(
-                            controller: textController7,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(0),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(0),
-                              ),
-                              filled: true,
-                              fillColor: Colors.white,
-                            ),
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w300,
-                            ),
-                            keyboardType: TextInputType.datetime,
-                            validator: (val) {
-                              if (val.isEmpty) {
-                                return 'Field is required';
-                              }
-
-                              return null;
-                            },
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
-                        child: Text(
-                          'Genero',
-                          textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      FlutterFlowRadioButton(
-                        options: ['Masculino'],
-                        onChanged: (value) {
-                          setState(() => radioButtonValue1 = value);
-                        },
-                        optionHeight: 25,
-                        textStyle: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.black,
-                        ),
-                        buttonPosition: RadioButtonPosition.left,
-                        direction: Axis.vertical,
-                        radioButtonColor: Colors.white,
-                        inactiveRadioButtonColor: Color(0x8A000000),
-                        toggleable: false,
-                        horizontalAlignment: WrapAlignment.start,
-                        verticalAlignment: WrapCrossAlignment.start,
-                      ),
-                      FlutterFlowRadioButton(
-                        options: ['Femenino'],
-                        onChanged: (value) {
-                          setState(() => radioButtonValue2 = value);
-                        },
-                        optionHeight: 25,
-                        textStyle: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.black,
-                        ),
-                        buttonPosition: RadioButtonPosition.left,
-                        direction: Axis.vertical,
-                        radioButtonColor: Colors.white,
-                        inactiveRadioButtonColor: Color(0x8A000000),
-                        toggleable: false,
-                        horizontalAlignment: WrapAlignment.start,
-                        verticalAlignment: WrapCrossAlignment.start,
-                      ),
-                      FlutterFlowRadioButton(
-                        options: ['Otro'],
-                        onChanged: (value) {
-                          setState(() => radioButtonValue3 = value);
-                        },
-                        optionHeight: 25,
-                        textStyle: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.black,
-                        ),
-                        buttonPosition: RadioButtonPosition.left,
-                        direction: Axis.vertical,
-                        radioButtonColor: Colors.white,
-                        inactiveRadioButtonColor: Color(0x8A000000),
-                        toggleable: false,
-                        horizontalAlignment: WrapAlignment.start,
-                        verticalAlignment: WrapCrossAlignment.start,
-                      )
-                    ],
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(25, 40, 25, 0),

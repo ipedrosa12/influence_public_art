@@ -22,7 +22,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFF8BBD0),
+      backgroundColor: Color(0xFFEEEEEE),
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -59,7 +59,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 40,
-                    color: FlutterFlowTheme.primaryColor,
+                    color: Color(0xFF070707),
                     textStyle: FlutterFlowTheme.subtitle2.override(
                       fontFamily: 'Poppins',
                       color: Colors.white,
@@ -103,7 +103,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     color: Color(0xFFE7F3FF),
                     textStyle: FlutterFlowTheme.subtitle2.override(
                       fontFamily: 'Poppins',
-                      color: Color(0xFF3474E0),
+                      color: Color(0xFF070707),
                     ),
                     borderSide: BorderSide(
                       color: Colors.transparent,
