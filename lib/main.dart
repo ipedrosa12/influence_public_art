@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: NavBarPage(),
+      home: HomeWidget(),
     );
   }
 }
