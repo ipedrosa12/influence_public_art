@@ -5,9 +5,10 @@ import 'package:proyecto/home/home_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'profile/profile_widget.dart';
-import 'eventos/eventos_widget.dart';
+import 'estados/estados_widget.dart';
 import 'inicio/inicio_widget.dart';
 import 'n_post/n_post_widget.dart';
+import 'eventos/eventos_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomeWidget(),
+      home: NavBarPage(),
     );
   }
 }
@@ -55,9 +56,10 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'profile': ProfileWidget(),
-      'eventos': EventosWidget(),
+      'estados': EstadosWidget(),
       'inicio': InicioWidget(),
       'nPost': NPostWidget(),
+      'eventos': EventosWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
@@ -65,18 +67,18 @@ class _NavBarPageState extends State<NavBarPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_outlined,
+              Icons.person_sharp,
               size: 24,
             ),
-            label: 'Home',
+            label: 'Profile',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
-              FontAwesomeIcons.book,
-              size: 20,
+              FontAwesomeIcons.clock,
+              size: 22,
             ),
-            label: 'Eventos',
+            label: 'Estados',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -93,6 +95,14 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 21,
             ),
             label: 'Nuevo Post',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.book,
+              size: 20,
+            ),
+            label: 'Eventos',
             tooltip: '',
           )
         ],

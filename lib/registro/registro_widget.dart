@@ -52,6 +52,32 @@ class _RegistroWidgetState extends State<RegistroWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFEEEEEE),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 35, 0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.network(
+                              'https://scontent.fbog2-4.fna.fbcdn.net/v/t39.30808-6/259017693_113020171199804_3572136886722395322_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=0debeb&_nc_ohc=JLng5FKLqJgAX-F5zDg&tn=Hkn27BVS_Z4zkbjD&_nc_ht=scontent.fbog2-4.fna&oh=95c1dfc8e6550192df824715bf6a3d71&oe=61A027B4',
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: Row(
@@ -308,7 +334,7 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 40,
-                        color: Color(0xFF27AC16),
+                        color: Color(0xFF020800),
                         textStyle: FlutterFlowTheme.subtitle2.override(
                           fontFamily: 'Poppins',
                           color: Colors.white,

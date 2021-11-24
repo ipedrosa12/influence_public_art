@@ -259,7 +259,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     Image.network(
                       'https://as2.ftcdn.net/v2/jpg/00/98/26/11/500_F_98261175_Sv69O3rZsHApYkjAdrWbgQixYHwyZyOr.jpg',
                       width: MediaQuery.of(context).size.width * 0.12,
-                      height: 100,
+                      height: 25,
                       fit: BoxFit.contain,
                     )
                   ],

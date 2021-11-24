@@ -1,3 +1,4 @@
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,24 @@ class _NPostWidgetState extends State<NPostWidget> {
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  children: [],
+                  children: [
+                    Expanded(
+                      child: FlutterFlowIconButton(
+                        borderColor: Colors.transparent,
+                        borderRadius: 30,
+                        borderWidth: 1,
+                        buttonSize: 90,
+                        icon: Icon(
+                          Icons.upload_file,
+                          color: Colors.black,
+                          size: 40,
+                        ),
+                        onPressed: () {
+                          print('IconButton pressed ...');
+                        },
+                      ),
+                    )
+                  ],
                 ),
               )
             ],
